@@ -50,11 +50,9 @@ class MyHTTP(object):
         dict_url["scheme"] = tuple_url.scheme
         dict_url["path"] = tuple_url.path
         dict_url["query"] = tuple_url.query
-
         return dict_url
 
     def _connect(self):
-
         if httplib.HTTP_PORT == self.port:
             self._connect = httplib.HTTPConnection(host=self.host, port=self.port, timeout=10000)
         elif httplib.HTTPS_PORT == self.port:
@@ -64,7 +62,7 @@ class MyHTTP(object):
         if input and type({}) != type(input):  return True
 
     def http_get(self):
-        time.sleep(40)
+        #time.sleep(40)
         request = self._connect.request(url=self.url
                                         , headers=self.headers
                                         , body=self.data
@@ -78,7 +76,7 @@ class MyHTTP(object):
         return response.read()
 
     def http_post(self):
-        time.sleep(10)
+        #time.sleep(10)
         request = self._connect.request(url=self.url
                                         , headers=self.headers
                                         , body=self.data
